@@ -16,6 +16,7 @@ namespace SpyVsSpy
     public string Marker { get; protected set; } = "S";
     public static Font Font { get; protected set; } = new Font("Consolas", 10f, FontStyle.Regular);
     public static Font BoldFont { get; protected set; } = new Font("Consolas", 10f, FontStyle.Bold);
+    public static Font SpyFont { get; protected set; } = new Font("Segoe UI Emoji", 6);
 
     public MatrixItem(int column, int row, Position position, string value = "*", string marker = "S")
     {
@@ -69,7 +70,8 @@ namespace SpyVsSpy
       {
         if (Value == Marker)
         {
-          graphics.DrawString(Value.ToString(), BoldFont, Brushes.Red, Position.Rectangle.X, Position.Rectangle.Y - 1.25f);
+          graphics.DrawString("🕵", SpyFont, Brushes.Gray, Position.Rectangle.X, Position.Rectangle.Y);
+          
         }
         else
         {
